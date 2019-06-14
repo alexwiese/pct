@@ -36,13 +36,13 @@ stage('Standard build') {
 }
 
 stage('Full tests') {
- parallel branch1: { testBranch('windows', 'JDK8', 'Ant 1.9', 'OpenEdge-11.7', true, '11.7-Win') },
-          branch2: { testBranch('linux', 'JDK8', 'Ant 1.9', 'OpenEdge-11.6', false, '11.6-Linux') },
-          branch3: { testBranch('linux', 'JDK8', 'Ant 1.9', 'OpenEdge-11.7', false, '11.7-Linux') },
-          branch4: { testBranch('linux', 'Corretto 8', 'Ant 1.10', 'OpenEdge-12.0', false, '12.0-Linux') },
-          branch5: { testBranch('windows', 'Corretto 8', 'Ant 1.10', 'OpenEdge-12.0', false, '12.0-Win') },
-          branch6: { testBranch('windows', 'Corretto 8', 'Ant 1.10', 'OpenEdge-12.1', true, '12.1-Win') },
-          branch7: { testBranch('linux', 'Corretto 8', 'Ant 1.10', 'OpenEdge-12.1', false, '12.1-Linux') },
+ parallel branch1: { testBranch('windows', 'JDK8', 'Ant 1.10', 'OpenEdge-11.7', true, '11.7-Win') },
+          branch2: { testBranch('linux', 'JDK8', 'Ant 1.10', 'OpenEdge-11.6', false, '11.6-Linux') },
+          branch3: { testBranch('linux', 'JDK8', 'Ant 1.10', 'OpenEdge-11.7', false, '11.7-Linux') },
+          branch4: { testBranch('linux', 'Corretto 11', 'Ant 1.10', 'OpenEdge-12.0', false, '12.0-Linux') },
+          branch5: { testBranch('windows', 'Corretto 11', 'Ant 1.10', 'OpenEdge-12.0', false, '12.0-Win') },
+          branch6: { testBranch('windows', 'Corretto 11', 'Ant 1.10', 'OpenEdge-12.1', true, '12.1-Win') },
+          branch7: { testBranch('linux', 'Corretto 11', 'Ant 1.10', 'OpenEdge-12.1', false, '12.1-Linux') },
           failFast: false
 
   node('linux') {
